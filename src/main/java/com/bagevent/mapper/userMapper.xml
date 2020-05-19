@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.bagevent.entity.User" table="USER">
+        <id name="user_id" type="int" column="user_id">
+            <generator class="native"/>
+        </id>
+        <property name="user_name" column="user_name" type="string"/>
+        <property name="password" column="password" type="string"/>
+        <property name="email" column="email" type="string"/>
+        <property name="cellphone" column="cellphone" type="string"/>
+        <property name="salt" column="salt" type="string"/>
+        <property name="state" column="state" type="integer"/>
+        <property name="create_time" column="create_time" type="date"/>
+    </class>
+
+    <class name="com.bagevent.entity.LoginLog" table="LOGINLOG">
+        <id name="login_id" type="int" column="login_id">
+            <generator class="native"/>
+        </id>
+        <property name="user_id" column="user_is" type="integer"/>
+        <property name="login_time" column="login_time" type="date"/>
+<!--        <property name="login_ip" column="login_ip" type="string"/>-->
+    </class>
+</hibernate-mapping>
